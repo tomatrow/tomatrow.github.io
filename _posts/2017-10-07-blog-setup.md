@@ -164,6 +164,6 @@ date: 2017-10-07
 - [ ] exa
 
 ## blog 
-- [ ] follow [guide](http://jmcglone.com/guides/github-pages/) for my inital jekyll
+- [x] follow [guide](http://jmcglone.com/guides/github-pages/) for my inital jekyll
 - [ ] serve via `cd ~/projects/tomatrow.github.io; and jekyll serve --host=optionaldefault.me` on droplet00 after following [guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-development-site-on-ubuntu-16-04) 
 
