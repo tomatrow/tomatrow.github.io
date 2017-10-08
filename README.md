@@ -129,3 +129,4 @@ An orderly collection of thoughts.
 - [ ] add weekly 
 - [ ] add posts 
 
+
