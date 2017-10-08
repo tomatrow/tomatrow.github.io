@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Inital Blog Setup"
+title: "Initial Blog Setup"
 date: 2017-10-07
 ---
 
