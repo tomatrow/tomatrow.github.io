@@ -169,4 +169,4 @@ date: 2017-10-07
 ## blog 
 - [x] follow [guide](http://jmcglone.com/guides/github-pages/) for my inital jekyll
 - [x] serve via `cd ~/projects/tomatrow.github.io; and jekyll serve --host=optionaldefault.me` on droplet00 after following [guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-development-site-on-ubuntu-16-04) 
-
+- [ ] add checkboxs to kramdown via liquid using [guide](http://blog.winddweb.info/implement-github-like-checkbox)
