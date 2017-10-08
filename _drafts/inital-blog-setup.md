@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hank Quinlan, Horrible Cop, Launches Site"
+title: "Inital Blog Setup"
 date: 2017-10-07
 ---
 
@@ -41,7 +41,6 @@ date: 2017-10-07
     - reviews 
         + tools 
         + languages 
-    - musings
 
 ### Implementation
 
@@ -161,7 +160,8 @@ date: 2017-10-07
     - `apt-get install git jekyll jekyll-from-redirect ruby ruby-dev make gcc nodejs`
     - seems the guide is slightly outdated, `jekyll-from-redirect` is now [`jekyll-redirect-from`](https://github.com/jekyll/jekyll-redirect-from)
     - Used: `sudo apt-get install git jekyll ruby ruby-dev make gcc nodejs`
-- [ ] exa
+- [x] install exa via binary
+    - had to manually install ``
 
 ## blog 
 - [x] follow [guide](http://jmcglone.com/guides/github-pages/) for my inital jekyll
