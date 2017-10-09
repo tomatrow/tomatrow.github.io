@@ -8,12 +8,10 @@
                     <li><a href="/">Home</a></li>
                     {% assign sections = 'about blog weekly' | split: ' ' %}
                     {% for section in sections %}
+                        {% assign first = section | truncate: 1, '' | upcase %}
+                        {% assign rest = section | slice: 1, 100 %}
                         <li>
-                            <a href={{ section | prepend: '/' }}>
-                                {% assign first = section | truncate: 1, '' | upcase %}
-                                {% assign rest = section | slice: 1, 100 %}
-                                {{ first | append: rest }}
-                            </a>
+                            <a href={{ section | prepend: '/' }}>{{ first | append: rest }}</a>
                         </li>
                     {% endfor %}
                 </ul>
