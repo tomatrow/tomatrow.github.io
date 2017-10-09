@@ -4,11 +4,9 @@ title: "How I made this site (or how to follow several tutorials)"
 date: 2017-10-08
 ---
 
-# How I made this site (or how to follow several tutorials)
-
 ## Separation of Concerns 
 
-I made a distinction between *content* and *implementation*m, as one does. 
+I made a distinction between *content* and *implementation*, as one does. 
 
 ### Content
 
@@ -37,8 +35,6 @@ So I came up with the following content list:
 
 Initially I wanted something slightly grand in a language/framework I've never used. Ruby/Rails fit the bill. I repented as soon as I considered a database of blog posts. 
 
-Everything old is new again
-
 I've been writing in Markdown since junior year. I'm fairly certain it was the first *language* I ever touched. With that in mind, my goals for an implementation were the following:
 
 * Easy content via markdown
@@ -47,6 +43,6 @@ I've been writing in Markdown since junior year. I'm fairly certain it was the f
 * some `ruby`, somewhere
 * inline latex
 
-It turns out [Jekyll](https://jekyllrb.com/) was exactly wanted to generate a site. It's written in (and extensible by) ruby + turns markdown in to content in a wonderful manner. As a plus, I followed [this tutorial](http://jakub.fedyczak.net/post/editing-jekyll-site-on-ios/) for editing via iOS. 
+[Jekyll](https://jekyllrb.com/) was exactly what I wanted to generate a site. It's written in (and extensible by) ruby + turns markdown into something serve-able. As a plus, I followed [this tutorial](http://jakub.fedyczak.net/post/editing-jekyll-site-on-ios/) for editing via iOS. 
 
 It turns out hosting is expensive. It also turns out companies like a good user base, which is why I still have leftover credits from [github's student pack](https://education.github.com/pack). My main choice was `ajcaldwell.io`, since `ajcaldwell.com` has been taken for several years *and* it's only $40 on [Route53](https://aws.amazon.com/route53/). But, AWS was smart and won't let you exchange credit for something of real value. That's why I'm sticking with `tomatrow.github.io` in the meantime.
