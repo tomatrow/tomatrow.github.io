@@ -4,10 +4,18 @@
         <body>
             <nav>
                 <ul>
+                    <!-- Navigation items with TitleCase. -->
                     <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/weekly">Weekly</a></li>
+                    {% assign sections = 'about blog weekly' | split: ' ' %}
+                    {% for section in sections %}
+                        <li>
+                            <a href={{ section | prepend: '/' }}>
+                                {% assign first = section | truncate: 1, '' | upcase %}
+                                {% assign rest = section | slice: 1, 100 %}
+                                {{ first | append: rest }}
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </nav>
             <div class="container">
