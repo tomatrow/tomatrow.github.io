@@ -38,7 +38,7 @@ Let $B$ be build numbers and $V$ be version numbers.
 * Def. Release Train for $v \in V$: 
     - Set of submitted builds with version $v$. 
 * Def. Apples Order:
-    - $V \tims B$ is alpha ordered where $V,B$ have the natural order. 
+    - $V \times B$ is alpha ordered where $V,B$ have the natural order. 
 
 ### Concerning Coffeefilter
 
