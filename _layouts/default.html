@@ -6,7 +6,7 @@
                 <ul>
                     <!-- Navigation items with TitleCase. -->
                     <li><a href="/">Home</a></li>
-                    {% assign sections = 'about blog weekly' | split: ' ' %}
+                    {% assign sections = site.pages | where: "category", "main" | map: "title" %}
                     {% for section in sections %}
                         {% assign first = section | truncate: 1, '' | upcase %}
                         {% assign rest = section | slice: 1, 100 %}
