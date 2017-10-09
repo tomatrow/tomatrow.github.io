@@ -1,12 +1,13 @@
 ---
-title: Versioning Internal iOS Applications
-layout: default
+title: iOS Versioning
+layout: post
+date: 2017-10-09
 ---
 
 ### The System
 
 * Semantic Versioning: 
-    - [Semantic Versioning](http://semver.org)(semver) promises no-thought-required method of moving between versions. The format is `major.minor.patch` where `major` changes break public API, `minor` changes modify the API in a backwards-compatible manner, and `patch` changes leave the API unchanged. 
+    - [Semantic Versioning](http://semver.org)(semver) promises a no-thought-required method of moving between versions. The format is `major.minor.patch` where `major` changes break public API, `minor` changes modify the API in a backwards-compatible manner, and `patch` changes leave the API unchanged. 
 * Romantic Versioning: 
     - based on conceptual changes and still follows some similar ordinal pattern. 
 
@@ -25,6 +26,8 @@ The system we use goes hand-in-hand with *who* we are versioning for. Possible a
 
 From [Apple's official notes](https://developer.apple.com/library/content/technotes/tn2420/_index.html) and these SO Answers: [(1)](https://stackoverflow.com/a/38009895), [(2)](https://stackoverflow.com/a/6965086), we can pull out the following.
 
+Let $B$ be build numbers and $V$ be version numbers.
+
 * Def. Version Number:
     - String in the matching `\d(\.\d)*` with less than 18 characters.
     - Has key `CFBundleShortVersionString` in `Info.plist`
@@ -32,9 +35,10 @@ From [Apple's official notes](https://developer.apple.com/library/content/techno
 * Def. Build Number:
     - String matching `\d(\.\d)?(\.\d)?`.
     - Has key `CFBundleVersion` in `Info.plist`
-* Def. Release Train for $v \in Versions$: 
+* Def. Release Train for $v \in V$: 
     - Set of submitted builds with version $v$. 
-* Def. Apples Order
+* Def. Apples Order:
+    - $V \tims B$ is alpha ordered where $V,B$ have the natural order. 
 
 ### Concerning Coffeefilter
 
