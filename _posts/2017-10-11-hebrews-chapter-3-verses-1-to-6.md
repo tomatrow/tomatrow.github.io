@@ -1,6 +1,7 @@
 ---
 title: Hebrews Chapter 3 Verses 1 to 6
 layout: post
+date: 2017-10-11
 ---
 
 ## Intro 
@@ -23,7 +24,7 @@ I get caught up in the right/wrong of things, which we should to an extent. But,
 
 Namely, $Jesus \sim Builder$, $Moses \sim House$, $Moses \sim Us$, and $Builder > House$. 
 
-We, humanity, are his work. He forms *people* into *family* for his good pleasure. The end goal being a creature that freely chooses to love his creator. How much more worthy of glory is his craft than what we can do. 
+We, humanity, are his work. He forms *people* into *family* for his good pleasure, where *family* is a creature that freely chooses to love his creator. How much more worthy of glory is his craft than ours. 
 
 [Glory to the builders](http://www.encyclopaedia-wot.org/history/compleat.html#phKiserai).
 
