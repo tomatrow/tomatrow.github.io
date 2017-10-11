@@ -1,6 +1,6 @@
 ---
 title: Categories and Tags
-layout: default
+layout: post
 ---
 
 ### What's the difference?
