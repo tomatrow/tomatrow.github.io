@@ -48,6 +48,18 @@ Open `Audio MIDI Setup` and use the plus button in the bottom-left-corner and se
 
 `Twitch-Input` is for use in the `fish` script, and `Twitch-Output` is the Output Device we use so that our system audio is sent through Soundflower *and* we can still hear it. Note your audio keys won't work when using `Twitch-Output`. 
 
+
+#### In Case of Trouble 
+
+* Case: "I can't hear anything": Try each one in order until it works, or just restart. 
+    - (1) Switch output devices. 
+    - (2) `kill` the coreaudio demon. 
+        + `sudo killall coreaudiod` should do it. 
+        + Thanks [Sbugurt](https://superuser.com/a/647556)
+    - (3) Reload the audio kernel extentions. 
+        + e.g. `sudo kextunload /System/Library/Extensions/AppleHDA.kext; and sudo kextload /System/Library/Extensions/AppleHDA.kext`
+        + Thanks [ali](https://superuser.com/a/742984)
+
 ### Configuring FFmpeg
 
 #### Installation 
