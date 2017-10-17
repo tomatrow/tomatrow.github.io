@@ -180,6 +180,8 @@ There are three ways to interface with Dynamo.
 
 Each is built on top of the [Low-Level API](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.LowLevelAPI.html). 
 
+* Note. Concerning Completions: We are given the choice between the use Promises in the form of  [`AWSTask`](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/awstask.html#handling-errors), a renamed `BFTask` of Facebooks [Bolts library](https://github.com/BoltsFramework/Bolts-Swift) or standard closure callbacks. 
+
 ![Interface Graph](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/images/SDKSupport.SDKInterfaces.png)
 
 #### The Low-Level API
@@ -190,24 +192,27 @@ Each is built on top of the [Low-Level API](http://docs.aws.amazon.com/amazondyn
     - Uses `json` which is interpreted as attributes. An attribute has a `key`, a `data-type-descriptor`, and `data`. So `a.long.list.of.keys` has a `{ "descriptor" : "data" }` at the end. The exact specifications are [here](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html?shortFooter=true).
     - Note there are reserved words for keys. 
 
-##### The Low-Level Interface
+#### The Low-Level Interface
 
 The section notes that there's a low Low-Level Interface for each SDK. Unfortunately they use Java as their canonical example. The iOS (Swift and Objective-C) one is [here](https://github.com/aws/aws-sdk-ios/tree/master/AWSDynamoDB). 
 
 This is the calling-objective-c-from-swift version. Life would be sad if we didn't have the High-Level Interface. 
 
-(Swift 3? not sure it matters)
+* Note. Concerning Optionals: 
+    - The example code unwraps only when required.
+    - e.g. On `DynamoDB` calls and in dictionaries. See the example below for details. 
+    - We follow this convention in all samples. 
 
 ```swift
 // Note.This code compiles, not sure if it *works*.
 // Note. The initialization of `AWSDynamoDBGetItemInput`, `AWSDynamoDBAttributeValue` is one one of those bridging headaches.
 let dynamo = AWSDynamoDB.default()
 
-let artist = AWSDynamoDBAttributeValue()!
-artist.s = "No One You Know"
-let songTitle = AWSDynamoDBAttributeValue()!
-songTitle.s = "Call Me Today"
-let key = ["Artist": artist, "SongTitle": songTitle]
+let artist = AWSDynamoDBAttributeValue()
+artist?.s = "No One You Know"
+let songTitle = AWSDynamoDBAttributeValue()
+songTitle?.s = "Call Me Today"
+let key = ["Artist": artist!, "SongTitle": songTitle!]
 
 let input = AWSDynamoDBGetItemInput()!
 input.tableName = "Music"
@@ -215,17 +220,16 @@ input.key = key
 
 dynamo.getItem(input).continueWith { task -> Any? in
     guard task.error == nil else {
-        print("Unable to retrieve data: ")
+        print("Unable to retrive data: ")
         print(task.error!.localizedDescription)
         return nil
     }  
-
-    // This might be semantically equivalent to cancellation. 
+    
     guard let year = task.result?.item?["Year"]?.n else {
         print("No matching song was found")
         return nil
     }
-
+    
     print("The song was released in " + year)
     
     return nil
@@ -234,12 +238,12 @@ dynamo.getItem(input).continueWith { task -> Any? in
 
 See this SO Answer by [Sébastien Stormacq](https://stackoverflow.com/a/26964281) to be further convinced of the need for the High-Level Interface.
 
-##### The Document Interface
+#### The Document Interface
 
 The document interface is between High-Level and Low-Level Interfaces. Unfortunately, I don't think the iOS SDK has one yet. And they probably won't write one until Swift stabilizes. 
 
 
-##### The High-Level Interface
+#### The High-Level Interface
 
 See, what they should have done is something like:  
 
@@ -296,4 +300,21 @@ mapper.load(MusicItem.self, hashKey: "No One You Know", rangeKey: "Call Me Today
     return nil
 }
 ```
+
+
+#### Handling Errors
+
+Errors objects consist of three components: A code, a name, and a message. 
+Errors are marked with a *retry-able* property where not retry-able implies a client side error. 
+
+For Swift, also can handle errors through `AWSTask` or closures. I choose `AWSTask` below. See [the official docs](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/aws-aysnchronous-tasks-for-ios.html#handling-errors-with-awstask) for better details.
+
+The Java example uses the Document Interface. This swift example will use the Low-Level Interface, to the same purpose.
+
+
+```swift
+// Note. This compiles, not sure if it *works*. 
+
+```
+
 
