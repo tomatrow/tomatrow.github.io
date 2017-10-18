@@ -1,6 +1,7 @@
 ---
 title: Eessentials Part 01 Chapter 01
 layout: post
+date: 2017-10-16
 ---
 
 ## Intro
