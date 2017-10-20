@@ -1,15 +1,10 @@
 ---
 title: Notes on DynamoDB
 layout: post
+date: 2017-10-18
 ---
 
-## Links 
-* [SOSP Paper](http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
-* [Dynamo FAQ](https://aws.amazon.com/dynamodb/faqs/)
-* [Dynamo Guide](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
-* [Dynamo Reference](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/Welcome.html)
-
-## SOSP Paper
+## Whitepaper
 
 * It's always writable, pushing conflict resolution onto reads. 
 * In the case of writing to the local store, and not being able to touch AWS, they use branching. Then we resolve the conflict. 
@@ -168,8 +163,6 @@ This is some mechanism used for cost analysis.
 
 ## Developer Guide
 
-
-
 ### Programming with Dynamo
 
 There are three ways to interface with Dynamo. 
@@ -234,6 +227,26 @@ dynamo.getItem(input).continueWith { task -> Any? in
     
     return nil
 }
+
+dynamo.getItem(input)
+    .continueOnSuccessWith { task -> AWSTask<AWSDynamoDBGetItemOutput> in
+        guard let musicItem = task.result?.item else {
+            print("No matching song was found")
+            return nil
+        }
+        
+        print("The song was released in \(musicItem["Year"]!.n!)")
+        return nil
+    }.continueWith {task -> Any? in
+        guard let error = task.error as NSError? else {
+            return nil
+        }
+        
+        print("Unable to retrive data: ")
+        print(error.localizedDescription)
+        
+        return nil
+}
 ```
 
 See this SO Answer by [Sébastien Stormacq](https://stackoverflow.com/a/26964281) to be further convinced of the need for the High-Level Interface.
@@ -256,14 +269,14 @@ See, what they should have done is something like:
 Instead they just want to confuse people.
 
 ```swift
-let mapper = AWSDynamoDBObjectMapper.default()
-
 final class MusicItem: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var Artist: String?
     var SongTitle: String?
     var AlbumTitle: String?
     var Year: NSNumber?
+    
+    var somethingInternal: String?
     
     static func dynamoDBTableName() -> String {
         return "Music"
@@ -278,26 +291,31 @@ final class MusicItem: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     }
     
     static func ignoreAttributes() -> [String] {
-        return []
+        return ["somethingInternal"]
     }
 }
 
-mapper.load(MusicItem.self, hashKey: "No One You Know", rangeKey: "Call Me Today").continueWith { task -> Any? in
-    
-    guard task.error == nil else {
-        print("Unable to retrieve data: ")
-        print(task.error!.localizedDescription)
-        return nil
-    }
-    
-    guard let musicItem = task.result as? MusicItem else {
-        print("No matching song was found")
-        return nil
-    } 
 
-    print("The song was released in " + musicItem.Year!.description)
-    
-    return nil
+AWSDynamoDBObjectMapper.default().load(MusicItem.self, hashKey: "No One You Know", rangeKey: "Call Me Today")
+    .continueOnSuccessWith { task -> AWSTask<AnyObject> in
+        guard let musicItem = task.result as? MusicItem else {
+            // Note. the block is only run if this task did not produce a cancellation or an error  
+            //       => we can assume the item does not exist. 
+            print("No matching song was found")
+            return nil
+        }
+        
+        print("The song was released in \(musicItem.Year!)")
+        
+        return nil
+    }.continueWith { task -> Any? in
+        guard let error = task.error as NSError? else {
+            return nil
+        }
+        
+        print("Unable to retrieve data: ")
+        print(error.localizedDescription)
+        return nil
 }
 ```
 
@@ -314,7 +332,41 @@ The Java example uses the Document Interface. This swift example will use the Lo
 
 ```swift
 // Note. This compiles, not sure if it *works*. 
+func build<T>(task: AWSTask<T>) {
+    task
+        .continueOnSuccessWith { task -> Any? in
+            guard let result = task.result else {
+                print("No result.")
+                return nil
+            }
+            print(result)
+            return nil
+        }.continueWith { task -> Any? in
+            if task.isCancelled {
+                print("Canceled.")
+            } else if task.isFaulted {
+                let error = task.error as NSError?
+                print("Recieved the error" + " : " + error.localizedDescription)
+            }
 
+            return nil
+        }
+}
+
+let source = AWSTaskCompletionSource<NSString>()
+build(task: source.task)
+
+//source.cancel() // A regular cancelation.
+//source.set(result: "Hello world!") // Completed with result.  
+//source.set(result: nil) // Completed without result. 
+//source.set(error: NSError(domain: "com.ajcaldwell.example", code: 1, userInfo: nil)) // Faulted.
 ```
 
 
+
+## Further Reading 
+* [SOSP Paper](http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
+* [Dynamo FAQ](https://aws.amazon.com/dynamodb/faqs/)
+* [Dynamo Guide](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+* [Dynamo Reference](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/Welcome.html)
+* [Dynamo iOS Guide](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/dynamodb-nosql-database-for-ios.html)
