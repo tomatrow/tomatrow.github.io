@@ -26,13 +26,15 @@ I know it seems small, but she ate the leftovers.
 
 ...
 
-She's truth, reliable and sure. There's no *argument* about wither $A$ or $B$ is better than $C$. It's always if $A$ is true then $B$ follows. 
-Catherine speaks the truth, even if it offends. Sometimes the things she says surprise me. At first it was shocking. But then it's wonderful. It doesn't *feel* like her thoughts need to be guessed.
+She's truth; the reliable and sure kind. Catherine is a good proof, where $A \thn B \thn C$, not some hand-wavy proof based on *choice*. 
+Catherine speaks the truth, even if it offends. At first it was shocking and surprising; then wonderful. It doesn't *feel* like her thoughts need to be guessed. 
 
-She has purpose. She determined her interests and decided to follow through, being mindful as she goes. You can see it when she's creating in the craft room, designing at her laptop, judging ingredients (and deals) at shops, or thinking about the next project.
+She has purpose. She determined her interests and decided to follow through, being mindful as she goes. You can see it when she's creating in the craft room, designing at her laptop, judging elements (and deals) at shops, or thinking about the next project.
 
-She's logic. I've always had the (misguided) impression girls were bundles of emotion and irrationally at times. That's not the case with her. Even when it *looks* like she's doing something slightly whimsical from the outside, she'll respond with either an argument or an assertion. 
+She's logical. I've always had the (misguided) impression girls were bundles of emotion and irrationally at times; that's not the case with her. Even when it *looks* like she's doing something slightly whimsical from the outside, she'll respond with either an argument or an assertion. 
 
 ...
 
 I just can't find any fault in her. I know they have to exist, but I might be blinded by affection. 
+
+... 

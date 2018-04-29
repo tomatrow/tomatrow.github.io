@@ -16,7 +16,7 @@ Another monster. Affection and courtesy are bound together; by ritual in public 
 
 More monsters. Jealousy is connected to loves; most of all affection, since it's the most instinctual. We feel left behind when the object changes from its familiar state. This *left behind* is either (1) abandonment or (contradictorily) (2) envy. 
 
-All these perversions of affection were concerned with *Need-love*. A demon also hide in *Gift-love*. 
+All these perversions of affection were concerned with *Need-love*. A demon also hides in *Gift-love*. 
 
 The only perversion is the *need to be needed*. Instinctual Affection is fulfilled by *a higher love* which wants good for object itself; not just what we can give it. Consider the house-cat. We make it invalid, a sink for *Gift-love*; an unfortunate substitute for the genuine item. It's not always cat.
 
@@ -53,9 +53,9 @@ work for ill as well as for good." - 62
 
 "I have said that almost anyone may be the object of Affection. Yes; and almost everyone expects to be." - 62
 
-"I am driven to literary examples be- cause you, the reader, and I do not live in the same neighbourhood" - 63
+"I am driven to literary examples because you, the reader, and I do not live in the same neighbourhood" - 63
 
-"We never catch this kind of hatred, any more than Affection, at the moment of its be- ginning. It was always there before." - 64
+"We never catch this kind of hatred, any more than Affection, at the moment of its beginning. It was always there before." - 64
 
 "If people are already unlovable a continual demand on their part (as of right) to be loved their manifest sense of injury, their reproaches, whether loud and clamorous or merely implicit in every look and gesture of resentful self-pity produce in us a sense of guilt (they are intended to do so) for a fault we could not have avoided and cannot cease to commit." - 65
 
@@ -65,7 +65,6 @@ work for ill as well as for good." - 62
 
 "Affection at its best practises a courtesy which is incomparably more subtle, sensitive, and deep than the public kind. In public a ritual would do." - 67
 
-
 "You can do anything in the right tone and at the right moment the tone and moment which are not intended to, and will not, hurt. " - 68
 
 "Every kind of love, almost every kind of association, is liable to \[jealousy\]." - 70
@@ -74,9 +73,7 @@ work for ill as well as for good." - 62
 
 "For Affection is the most instinctive, in that sense the most animal, of the loves; its jealousy is proportionately fierce." - 71
 
-
 "But the proper aim of giving is to put the recipient in a state where he no longer needs our gift." - 76
-
 
 "the ravenous need to be needed will gratify itself either by keeping its objects needy or by inventing for them imaginary needs." - 76 
 
