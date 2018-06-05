@@ -85,7 +85,7 @@ Where does fear come from? See 1 John 4:7-18 for this.
 * (2) Love others, fear leaves. 
 * (3) Practicing love fits with God's love. 
 
-Love hurts, since people will let you down, but never truing things is worthless. There's no growth. These relationship teach us what God's love is like. 
+Love hurts, since people will let you down, but never trying things is worthless. There's no growth. These relationship teach us what God's love is like. 
 
 His love remains if you accept it, else theres no relationship, similar to loving our enemies. 
 
@@ -102,3 +102,41 @@ Doublmindedness is knowing truth, yet wavering. We want to fear God, be holy, an
 
 
 ## Chapter 9
+
+
+What is this chapter about? 
+
+We are saved, this is good. Yet, we still hide behind legalism/works in fear/shame/guilt. We miss fellowship for *this*, but the kingdom is *here* (Matt. 3:2). 
+
+Fear and shame keep us from him, not sin. So, take heart, trust he won't hurt us. Jesus despised the cross's shame, he knew the joy to come (Heb. 12:2). 
+
+So, give up on knowing *about* God and just *know* God. *Countinously* repent from fear, legalism, thoughts by *keeping* focus on God. The wind and the waves take us off course. 
+
+So, activly seek God like David: meditate on the word, be quiet with God. 
+
+Remember you *are* something, not what you *do* or what you *have*. 
+
+Wait for the LORD. 
+
+## Chapter 10
+
+Consider Gideon; he was continously afraid, and God continuously worked with him. 
+
+He pointed out his inadiqucies when God called him; God responds "I will be with you"(Judges 6:16). 
+
+As a reminder: 
+
+* (1) You have a valuable gift 
+* (2) Fear and God compete for you 
+* (3) Fear has a physical effect 
+* (4) Control is a false dominion 
+* (5) Do it afraid; power is God fulfilling the step 
+* (6) Love/Fear shapes character by Others/Self or Good/Safe
+* (7) Fear distorts reality; create a sound mind by continuously maximizing pure/true/lovely input 
+* (8) He wants intimacy, not fear/shame 
+* (9) => believe He loves us => proactivly seek God like David: always repenting 
+
+Gideon stalls, testing the Angel's reality and *crys out* in fear when the Angel proves real(Judges 6:22). Gideon then continued to ask for signs; but he obeyed. His obedience made him a hero, not a coward. 
+
+"Whether you’re already out on the battlefield or still hiding in the winepress, God is calling you, Mighty Warrior, to overcome fear. He will be with you all the way. When you’re afraid, he’ll help you.
+If you’re willing to do it afraid, you will overcome. The victory is guaranteed, because the Lord is with you."
