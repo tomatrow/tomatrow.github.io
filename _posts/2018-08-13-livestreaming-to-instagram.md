@@ -26,12 +26,57 @@ We will install:
 -   (3) `Instagram-API`
 -   (4) `liveBroadcast.php`
 
+
+-   (1)
+    Homebrew is a package manager for MacOS. We need it to install `composer`.
+
+    Run `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` in Terminal.
+
+-   (2)
+    [`composer`](<>) is a dependency manager for `php` applications.
+
+    Run `brew install composer` in Terminal.
+
+-   (3)
+    [Instagram-API](<>) is the library we will be using.
+    We will be running off master to get all the latest stuff.
+    So, change directory to an empty folder.
+        mkdir -p ~/sandbox/hesed/instagram
+        cd ~/sandbox/hesed/instagram
+        composer require mgp25/instagram-php dev-master
+-   (4)
+     Now we just move the example script from `Instagram-API`'s `examples` directory to the root of our project.    
+
+        cp vendor/mgp25/instagram-php/examples/liveBroadcast.php .
+
+Now, all files should be in place, and it should have the following structure:
+
+    .
+    ├── composer.json
+    ├── composer.lock
+    ├── liveBroadcast.php
+    └── vendor
+
 ### Live-streaming
 
 We will:
 
--   (1) enter our username/passsword
--   (2) enter the video's location
--   (3) run it
+-   (1) change an import statement
+-   (2) enter our username/passsword
+-   (3) enter the video's location
+-   (4) run it
+
+Now, open up `liveBroadcast.php` in your favorite text editor.
+
+-   (1)
+    Since we moved `liveBroadcast.php`, we need to change an import statement:
+
+        `require __DIR__.'/../vendor/autoload.php';`
+
+    to
+
+        `require __DIR__.'/vendor/autoload.php';`
+
+-   (2)
 
 ## More Information
